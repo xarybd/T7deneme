@@ -1,0 +1,157 @@
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #000;
+    color: #f0f0f0;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('background.jpg') no-repeat center center;
+    background-size: cover;
+    z-index: -1;
+    animation: moveBackground 20s infinite linear;
+}
+
+@keyframes moveBackground {
+    0% { transform: scale(1) translate(0, 0); }
+    50% { transform: scale(1.05) translate(-2%, -2%); }
+    100% { transform: scale(1) translate(0, 0); }
+}
+
+.container {
+    text-align: center; /* İçeriğin ortalanması */
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Tüm içeriklerin ortalanması */
+    width: 300px;
+}
+
+.logo {
+    margin-bottom: 10px; /* Logonun altındaki boşluk */
+    width: 100%; /* Logonun genişliğini kutunun tamamına yay */
+    max-width: 350px; /* Logonun maksimum genişliğini ayarla */
+}
+
+.contact-info {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Öğeler arasındaki boşluk */
+    width: 100%;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #f0f0f0;
+    font-size: 1.2em;
+    margin-bottom: 10px; /* Her öğenin altına boşluk ekle */
+    width: 100%;
+    justify-content: flex-start; /* İkon ve metinlerin sola hizalanması */
+}
+
+.contact-item img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px; /* İkon ve metin arasındaki boşluk */
+}
+
+.contact-item span {
+    font-size: 1.3em;
+    text-align: left;  /* Metni sola hizala */
+    width: 100%;  /* Metni genişlet */
+}
+
+.contact-item:last-child {
+    justify-content: flex-start; /* Son öğeyi de sola hizala */
+}
+
+.contact-item:hover {
+    color: #8cece2;
+}
+
+/* Mobile styles */
+@media only screen and (max-width: 600px) {
+    body {
+        height: auto;
+        padding: 10px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 15px;
+        box-shadow: none;
+    }
+
+    .logo {
+        width: 80%;
+        max-width: 300px;
+    }
+
+    .contact-item {
+        font-size: 1em;
+    }
+
+    .contact-item img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .contact-info {
+        gap: 10px;
+    }
+}
+
+/* Mobile styles */
+@media only screen and (max-width: 600px) {
+    body {
+        height: auto;
+        padding: 10px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: none;
+        background: rgba(255, 255, 255, 0.05); /* Lighter background */
+        backdrop-filter: blur(5px); /* Reduced blur for compatibility */
+    }
+
+    .logo {
+        width: 70%;
+        max-width: 250px;
+    }
+
+    .contact-item {
+        font-size: 0.9em;
+    }
+
+    .contact-item img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .contact-info {
+        gap: 8px;
+    }
+}
